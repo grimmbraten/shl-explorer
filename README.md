@@ -1,13 +1,9 @@
-# apollo-server-vercel
-
-A quick demo showing how to host an [Apollo server](https://www.apollographql.com/docs/apollo-server/) on [Vercel](https://vercel.com/).
-
-## Demo
-
-Type the following command in your terminal to test:
+# shl-explorer
 
 ```bash
-curl  --location --request POST 'https://apollo-server-vercel-eight.vercel.app/graphql' \
-      --header 'Content-Type: application/json' \
-      --data-raw '{"query":"{\n    hello\n}","variables":{}}'
+curl --request POST \
+  --url https://shl-explorer.vercel.app/graphql \
+  --header 'Content-Type: application/json' \
+  --header 'authorization: {REPLACE_ME}' \
+  --data '{"query":"query ExampleQuery {\n  nextGame(team: \"FHC\") {\n    homeTeamCode\n\t\tawayTeamCode\n  }\n}\n","operationName":"ExampleQuery","variables":{}}'
 ```
